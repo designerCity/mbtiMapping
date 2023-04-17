@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도 생성하기</title>
+    
+</head>
+<body>
+<!-- 지도를 표시할 div 입니다 -->
+<!-- <div id="map" style="width:100%;height:350px;"></div> -->
+<div id="mapwrap"> 
+    <!-- 지도가 표시될 div -->
+    <div id="map" style="width:100%;height:800px;"></div>
+    <!-- 지도 위에 표시될 마커 카테고리 -->
+    <div class="category">
+        <ul>
+            <li id="ENFJMenu" onclick="changeMarker('enfj')">
+                <span class="ico_comm ico_coffee"></span>
+                ENFJ
+            </li>
+            <li id="ENFPMenu" onclick="changeMarker('enfp')">
+                <span class="ico_comm ico_coffee"></span>
+                ENFP
+            </li>
+            <li id="ENTJMenu" onclick="changeMarker('entj')">
+                <span class="ico_comm ico_coffee"></span>
+                ENTJ
+            </li>
+            <li id="ENTPMenu" onclick="changeMarker('entp')">
+                <span class="ico_comm ico_coffee"></span>
+                ENTP
+            </li>
+            <li id="ESFJMenu" onclick="changeMarker('esfj')">
+                <span class="ico_comm ico_coffee"></span>
+                ESFJ
+            </li>
+            <li id="ESFPMenu" onclick="changeMarker('esfp')">
+                <span class="ico_comm ico_coffee"></span>
+                ESFP
+            </li>
+            <li id="ESTJMenu" onclick="changeMarker('estj')">
+                <span class="ico_comm ico_coffee"></span>
+                ESTJ
+            </li>
+            <li id="ESTPMenu" onclick="changeMarker('estp')">
+                <span class="ico_comm ico_coffee"></span>
+                ESTP
+            </li>
+            <li id="INFJMenu" onclick="changeMarker('infj')">
+                <span class="ico_comm ico_coffee"></span>
+                INFJ
+            </li>
+            <li id="INFPMenu" onclick="changeMarker('infp')">
+                <span class="ico_comm ico_coffee"></span>
+                INFP
+            </li>
+            <li id="INTJMenu" onclick="changeMarker('intj')">
+                <span class="ico_comm ico_coffee"></span>
+                INTJ
+            </li>
+            <li id="INTPMenu" onclick="changeMarker('intp')">
+                <span class="ico_comm ico_coffee"></span>
+                INTP
+            </li>
+            <li id="ISFJMenu" onclick="changeMarker('isfj')">
+                <span class="ico_comm ico_coffee"></span>
+                ISFJ
+            </li>
+            <li id="ISFPMenu" onclick="changeMarker('isfp')">
+                <span class="ico_comm ico_coffee"></span>
+                ISFP
+            </li>
+            <li id="ISTJMenu" onclick="changeMarker('istj')">
+                <span class="ico_comm ico_coffee"></span>
+                ISTJ
+            </li>
+            <li id="ISTPMenu" onclick="changeMarker('istp')">
+                <span class="ico_comm ico_coffee"></span>
+                ISTP
+            </li>
+        </ul>
+    </div>
+</div>
+<p>
+    <button onclick="setCenter()">지도 중심좌표 이동시키기</button> 
+    <button onclick="panTo()">지도 중심좌표 부드럽게 이동시키기</button> 
+</p>
+<!--  여기에는 js 앱 키가 들어가야함. -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=410f81ee9d7e99435c55afb1a68f0792"></script>
+<script>
+//     var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+//     mapOption = { 
+//         center: new kakao.maps.LatLng(37.54699, 127.09598), // 지도의 중심좌표
+//         level: 3 // 지도의 확대 레벨
+//     };
+
+// var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+
+
+
+</script>
+<script src="map.js"></script>
+<script src="mappingCatagory.js"></script>
+<script src="index.css"></script>
+</body>
+</html>
