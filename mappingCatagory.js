@@ -1,3 +1,5 @@
+
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
         center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표 
@@ -6,7 +8,26 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-
+var contents = [
+    '<div class="wrap">',
+    '    <div class="info">',
+    '        <div class="title">',
+    '            카카오 판교오피스',
+    '            <div class="close" onclick="closeOverlay()" title="닫기"></div>',
+    '        </div>',
+    '        <div class="body">',
+    // '            <div class="img">',
+    // '                <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png" width="73" height="70">',
+    // '           </div>',
+    '            <div class="desc">',
+    '                <div class="ellipsis">카카오</div>',
+    '                <div class="jibun ellipsis">(우) 12345 (지번) 판교동 807-8</div>',
+    '                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>',
+    '            </div>',
+    '        </div>',
+    '    </div>',
+    '</div>'
+].join('');
 var ENFJPositions = [ 
 	new kakao.maps.LatLng(37.5262068, 126.9281499),
 	new kakao.maps.LatLng(37.5657183, 126.9916744),
@@ -372,13 +393,13 @@ var ISTPPositions = [
 
 
 
+// var markerImageSrc="https://cfile181.uf.daum.net/image/250649365602043421936D"
 
+var markerImageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";  // 노란색 마커이미지
 
+// var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
+    
 
-var markerImageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/category.png';  // 마커이미지의 주소입니다. 스프라이트 이미지 입니다
-    // coffeeMarkers = [], // 커피숍 마커 객체를 가지고 있을 배열입니다
-    // storeMarkers = [], // 편의점 마커 객체를 가지고 있을 배열입니다
-    // carparkMarkers = []; // 주차장 마커 객체를 가지고 있을 배열입니다
     ENFJMarkers = [],
     ENFPMarkers = [],
     ENTJMarkers = [],
@@ -431,23 +452,24 @@ function createMarker(position, image) {
         position: position,
         image: image
     });
-    
+
     return marker;  
 }   
 
 // 마커 설정
 function createENFJMarkers() {
 	for (var i = 0; i <ENFJPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
 		var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
 			marker = createMarker(ENFJPositions[i], markerImage);
 
+            // kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
 
 		ENFJMarkers.push(marker);
 	}
@@ -461,10 +483,10 @@ function setENFJMarkers(map) {
 }
 function createENFPMarkers() {
 	for (var i = 0; i <ENFPPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -484,10 +506,10 @@ function setENFPMarkers(map) {
 }
 function createENTJMarkers() {
 	for (var i = 0; i <ENTJPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -507,10 +529,10 @@ function setENTJMarkers(map) {
 }
 function createENTPMarkers() {
 	for (var i = 0; i <ENTPPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -530,10 +552,10 @@ function setENTPMarkers(map) {
 }
 function createESFJMarkers() {
 	for (var i = 0; i <ESFJPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -553,10 +575,10 @@ function setESFJMarkers(map) {
 }
 function createESFPMarkers() {
 	for (var i = 0; i <ESFPPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -576,10 +598,10 @@ function setESFPMarkers(map) {
 }
 function createESTJMarkers() {
 	for (var i = 0; i <ESTJPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -599,10 +621,10 @@ function setESTJMarkers(map) {
 }
 function createESTPMarkers() {
 	for (var i = 0; i <ESTPPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -622,10 +644,10 @@ function setESTPMarkers(map) {
 }
 function createINFJMarkers() {
 	for (var i = 0; i <INFJPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -645,10 +667,10 @@ function setINFJMarkers(map) {
 }
 function createINFPMarkers() {
 	for (var i = 0; i <INFPPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -668,10 +690,10 @@ function setINFPMarkers(map) {
 }
 function createINTJMarkers() {
 	for (var i = 0; i <INTJPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -691,10 +713,10 @@ function setINTJMarkers(map) {
 }
 function createINTPMarkers() {
 	for (var i = 0; i <INTPPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -714,10 +736,10 @@ function setINTPMarkers(map) {
 }
 function createISFJMarkers() {
 	for (var i = 0; i <ISFJPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -737,10 +759,10 @@ function setISFJMarkers(map) {
 }
 function createISFPMarkers() {
 	for (var i = 0; i <ISFPPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -760,10 +782,10 @@ function setISFPMarkers(map) {
 }
 function createISTJMarkers() {
 	for (var i = 0; i <ISTJPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
@@ -783,16 +805,16 @@ function setISTJMarkers(map) {
 }
 function createISTPMarkers() {
 	for (var i = 0; i <ISTPPositions.length; i++) {
-		var imageSize = new kakao.maps.Size(22, 26),
+		var imageSize = new kakao.maps.Size(24,35),
 			imageOptions = {
-				spriteOrigin: new kakao.maps.Point(10, 0),
-				spriteSize: new kakao.maps.Size(36, 98)
+				// spriteOrigin: new kakao.maps.Point(10, 0),
+				// spriteSize: new kakao.maps.Size(36, 98)
 			};
 
 
 		var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
 			marker = createMarker(ISTPPositions[i], markerImage);
-
+        
 
 		ISTPMarkers.push(marker);
 	}
@@ -812,7 +834,7 @@ function setISTPMarkers(map) {
     
 //     for (var i = 0; i < coffeePositions.length; i++) {  
         
-//         var imageSize = new kakao.maps.Size(22, 26),
+//         var imageSize = new kakao.maps.Size(24,35),
 //             imageOptions = {  
 //                 spriteOrigin: new kakao.maps.Point(10, 0),    
 //                 spriteSize: new kakao.maps.Size(36, 98)  
@@ -926,6 +948,7 @@ function changeMarker(type){
         ISFPMenu.className = '';
         ISTJMenu.className = '';
         ISTPMenu.className = '';
+        
         setENFJMarkers(map);
         setENFPMarkers(null);
         setENTJMarkers(null);
@@ -942,6 +965,9 @@ function changeMarker(type){
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        // mouseOverPlace('enfj');
+
+        
     }
     else if (type === 'enfp') {
         ENFJMenu.className = '';
@@ -1416,10 +1442,15 @@ function changeMarker(type){
         setINTPMarkers(null);
         setISFJMarkers(null);
         setISFPMarkers(null);
+        // mouseOverPlace('ISTJ')
         setISTJMarkers(map);
+        mouseOverPlace('ISTJ')
         setISTPMarkers(null);
+
+        
     }
     else if (type === 'istp') {
+        // mouseOverPlace(null)
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1451,7 +1482,9 @@ function changeMarker(type){
         setISFJMarkers(null);
         setISFPMarkers(null);
         setISTJMarkers(null);
-        setISTPMarkers(map);
+        // setISTPMarkers(map);
+        setISTPMarkers(null);
+        mouseOverPlace('ISTP')
     }
 
 
