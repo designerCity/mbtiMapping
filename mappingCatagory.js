@@ -1,5 +1,3 @@
-
-
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
         center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표 
@@ -437,9 +435,39 @@ createISFPMarkers();
 createISTJMarkers();
 createISTPMarkers();
 
-changeMarker('enfj'); // 지도에 커피숍 마커가 보이도록 설정합니다    
-
-
+changeMarker('enfj', 'enfj'); // 지도에 커피숍 마커가 보이도록 설정합니다    
+var ISTPcontents = ['<div class="wrap">    <div class="info">        <div class="title">당현천 근린공원            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">상계동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 노원구 동일로 1328-1</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">석촌호수            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">잠실동</div>                <div class="jibun ellipsis">표준신주소 : nan</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">호시타코야끼            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">휘경동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 동대문구 망우로18가길 52</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">이화여자대학교            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">대현동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 서대문구 이화여대길 52</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">망원스타벅스            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">망원동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 마포구 마포나루길 407</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">망원한강공원            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">망원동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 마포구 마포나루길 467</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">서울숲            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">성수동1가</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 성동구 뚝섬로 273</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">더현대 서울            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">여의도동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 영등포구 여의대로 108</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">롯데월드타워            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">신천동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 송파구 올림픽로 300</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">석촌호수            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">잠실동</div>                <div class="jibun ellipsis">표준신주소 : nan</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">망원한강공원            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">망원동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 마포구 마포나루길 467</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">여의도 한강공원            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">여의도동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 영등포구 여의동로 330</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">서울숲            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">성수동1가</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 성동구 뚝섬로 273</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">뚝섬            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">자양동</div>                <div class="jibun ellipsis">표준신주소 : nan</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">낙산공원            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">동숭동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 종로구 낙산길 41</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">국립현대미술관            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">소격동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 종로구 삼청로 30</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">카페무네            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">nan</div>                <div class="jibun ellipsis">표준신주소 : nan</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>']
+var ISTJcontents = ['<div class="wrap">    <div class="info">        <div class="title">용산공원            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">용산동6가</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 용산구 서빙고로 221</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">분짜킴            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">답십리동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 동대문구 황물로15다길 4</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">하이디라오 홍대            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">동교동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 마포구 양화로 176</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">신도림 현대백화점            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">신도림동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 구로구 경인로 662</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">콤파일            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">서교동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 마포구 잔다리로 73</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">뮤지엄한미            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">삼청동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 종로구 삼청로9길 45</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">맥심플랜트            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">한남동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 용산구 이태원로 250</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">단일서울            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">성수동1가</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 성동구 왕십리로 66-33</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">더숲초소책방            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">옥인동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 종로구 인왕산로 172</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">반포한강공원            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">반포동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 서초구 신반포로11길 40</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">강남역 스타벅스            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">서초동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 서초구 서초대로77길 27</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">석촌호수            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">잠실동</div>                <div class="jibun ellipsis">표준신주소 : nan</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">스타벅스 서울 상공회의소            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">남대문로4가</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 중구 세종대로 39</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">북서울꿈의숲            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">번동</div>                <div class="jibun ellipsis">표준신주소 : 서울특별시 강북구 월계로 173</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>',
+'<div class="wrap">    <div class="info">        <div class="title">스타벅스 경동1960점            <div class="close" onclick="closeOverlay()" title="닫기"></div>        </div>        <div class="body">            <div class="desc">                <div class="ellipsis">nan</div>                <div class="jibun ellipsis">표준신주소 : nan</div>                <div><a href="https://map.kakao.com/link/map/카카오,37.402056,127.108212" target="_blank" class="link">큰지도보기</a> <a href="https://map.kakao.com/link/to/카카오,37.402056,127.108212" target="_blank" class="link">길찾기</a></div>            </div>        </div>    </div></div>']
 // 마커이미지의 주소와, 크기, 옵션으로 마커 이미지를 생성하여 리턴하는 함수입니다
 function createMarkerImage(src, size, options) {
     var markerImage = new kakao.maps.MarkerImage(src, size, options);
@@ -447,14 +475,19 @@ function createMarkerImage(src, size, options) {
 }
 
 // 좌표와 마커이미지를 받아 마커를 생성하여 리턴하는 함수입니다
-function createMarker(position, image) {
+function createMarker(position, image, contents) {
     var marker = new kakao.maps.Marker({
         position: position,
-        image: image
+        image: image,
+        title: contents
+
     });
 
     return marker;  
 }   
+
+// mbti 별 createMBTIMarkers 함수
+
 
 // 마커 설정
 function createENFJMarkers() {
@@ -479,6 +512,7 @@ function createENFJMarkers() {
 function setENFJMarkers(map) {
 	for (var i = 0; i <ENFJMarkers.length; i++) {
 		ENFJMarkers[i].setMap(map);
+        // kakao.maps.event.addListener(ENFJMarkers[i], 'mouseover', makeOverListener(map, ENFJMarkers[i], infowindow));
 	}
 }
 function createENFPMarkers() {
@@ -589,6 +623,7 @@ function createESFPMarkers() {
 		ESFPMarkers.push(marker);
 	}
 }
+
 
 
 function setESFPMarkers(map) {
@@ -751,6 +786,11 @@ function createISFJMarkers() {
 	}
 }
 
+function setENFJMarkers(map) {
+    for (var i = 0; i <ENFJMarkers.length; i++) {
+        ENFJMarkers[i].setMap(map);
+    }
+}
 
 function setISFJMarkers(map) {
 	for (var i = 0; i <ISFJMarkers.length; i++) {
@@ -787,7 +827,7 @@ function createISTJMarkers() {
 				// spriteOrigin: new kakao.maps.Point(10, 0),
 				// spriteSize: new kakao.maps.Size(36, 98)
 			};
-
+        
 
 		var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
 			marker = createMarker(ISTJPositions[i], markerImage);
@@ -796,7 +836,11 @@ function createISTJMarkers() {
 		ISTJMarkers.push(marker);
 	}
 }
-
+function makeOverListener(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map, marker);
+    };
+}
 
 function setISTJMarkers(map) {
 	for (var i = 0; i <ISTJMarkers.length; i++) {
@@ -813,10 +857,13 @@ function createISTPMarkers() {
 
 
 		var markerImage = createMarkerImage(markerImageSrc, imageSize, imageOptions),
-			marker = createMarker(ISTPPositions[i], markerImage);
+			marker = createMarker(ISTPPositions[i], markerImage, ISTPcontents);
         
-
+            // var infowindow = new kakao.maps.InfoWindow({
+            //     content: contents[i] // 인포윈도우에 표시할 내용
+            // });
 		ISTPMarkers.push(marker);
+        // kakao.maps.event.addListener(ISTPMarkers[i], 'mouseover', makeOverListener(map, ISTPMarkers[i], infowindow));
 	}
 }
 
@@ -827,8 +874,10 @@ function setISTPMarkers(map) {
 	}
 }
 
-
-
+setTimeout()
+setTimeout(function() {
+    console.log('Works!');
+  }, 500);
 // // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가하는 함수입니다
 // function createCoffeeMarkers() {
     
@@ -909,11 +958,72 @@ function setISTPMarkers(map) {
 // }
 
 // 카테고리를 클릭했을 때 type에 따라 카테고리의 스타일과 지도에 표시되는 마커를 변경합니다
-function changeMarker(type){
+function changeMarker(type, beforeType) {
+    // if (type !== beforeType) {
+    //     // beforType 을 카테고리에서 제거합니다
+    //     var beforeTypeMenu = document.getElementById(beforeType + 'Menu');
+    //         beforeTypeMenu.className = '';  
+
+    //     // type을 카테고리에 추가합니다
+    //     var typeMenu = document.getElementById(type + 'Menu');
+    //     typeMenu.className = 'menu_selected';
+
+    //     // type에 해당하는 마커만 지도에 표시하고 나머지는 지도에서 제거합니다
     
-    // var coffeeMenu = document.getElementById('coffeeMenu');
-    // var storeMenu = document.getElementById('storeMenu');
-    // var carparkMenu = document.getElementById('carparkMenu');
+    //     setISTPMarkers(null);
+    //     setENFJMarkers(null);
+    //     setENFPMarkers(null);
+    //     setENTJMarkers(null);
+    //     setENTPMarkers(null);
+    //     setESFJMarkers(null);
+    //     setESFPMarkers(null);
+    //     setESTJMarkers(null);
+    //     setESTPMarkers(null);
+    //     setINFJMarkers(null);
+    //     setINFPMarkers(null);
+    //     setINTJMarkers(null);
+    //     setINTPMarkers(null);
+    //     setISFJMarkers(null);
+    //     setISFPMarkers(null);
+    //     setISTJMarkers(null);
+        
+    //     if (type === 'ISTP') {
+    //         setISTPMarkers(map);
+    //     } else if (type === 'ENFJ') {
+    //         setENFJMarkers(map);
+    //     } else if (type === 'ENFP') {
+    //         setENFPMarkers(map);
+    //     } else if (type === 'ENTJ') {
+    //         setENTJMarkers(map);
+    //     } else if (type === 'ENTP') {
+    //         setENTPMarkers(map);
+    //     } else if (type === 'ESFJ') {
+    //         setESFJMarkers(map);
+    //     } else if (type === 'ESFP') {
+    //         setESFPMarkers(map);
+    //     } else if (type === 'ESTJ') {
+    //         setESTJMarkers(map);
+    //     } else if (type === 'ESTP') {
+    //         setESTPMarkers(map);
+    //     } else if (type === 'INFJ') {
+    //         setINFJMarkers(map);
+    //     } else if (type === 'INFP') {
+    //         setINFPMarkers(map);
+    //     } else if (type === 'INTJ') {
+    //         setINTJMarkers(map);
+    //     } else if (type === 'INTP') {
+    //         setINTPMarkers(map);
+    //     } else if (type === 'ISFJ') {
+    //         setISFJMarkers(map);
+    //     } else if (type === 'ISFP') {
+    //         setISFPMarkers(map);
+    //     } else if (type === 'ISTJ') {
+    //         setISTJMarkers(map);
+    //     }
+    // } else {
+        
+    
+    
     var ENFJMenu = document.getElementById('ENFJMenu');
     var ENFPMenu = document.getElementById('ENFPMenu');
     var ENTJMenu = document.getElementById('ENTJMenu');
@@ -965,9 +1075,7 @@ function changeMarker(type){
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
-        // mouseOverPlace('enfj');
-
-        
+        mouseOverPlace('enfj');
     }
     else if (type === 'enfp') {
         ENFJMenu.className = '';
@@ -1486,46 +1594,8 @@ function changeMarker(type){
         setISTPMarkers(null);
         mouseOverPlace('ISTP')
     }
+}
 
 
 
-    // 커피숍 카테고리가 클릭됐을 때
-    // if (type === 'coffee') {
-    
-    //     // 커피숍 카테고리를 선택된 스타일로 변경하고
-    //     coffeeMenu.className = 'menu_selected';
-        
-    //     // 편의점과 주차장 카테고리는 선택되지 않은 스타일로 바꿉니다
-    //     storeMenu.className = '';
-    //     carparkMenu.className = '';
-        
-    //     // 커피숍 마커들만 지도에 표시하도록 설정합니다
-    //     setCoffeeMarkers(map);
-    //     setStoreMarkers(null);
-    //     setCarparkMarkers(null);
-        
-    // } else if (type === 'store') { // 편의점 카테고리가 클릭됐을 때
-    
-    //     // 편의점 카테고리를 선택된 스타일로 변경하고
-    //     coffeeMenu.className = '';
-    //     storeMenu.className = 'menu_selected';
-    //     carparkMenu.className = '';
-        
-    //     // 편의점 마커들만 지도에 표시하도록 설정합니다
-    //     setCoffeeMarkers(null);
-    //     setStoreMarkers(map);
-    //     setCarparkMarkers(null);
-        
-    // } else if (type === 'carpark') { // 주차장 카테고리가 클릭됐을 때
-     
-    //     // 주차장 카테고리를 선택된 스타일로 변경하고
-    //     coffeeMenu.className = '';
-    //     storeMenu.className = '';
-    //     carparkMenu.className = 'menu_selected';
-        
-    //     // 주차장 마커들만 지도에 표시하도록 설정합니다
-    //     setCoffeeMarkers(null);
-    //     setStoreMarkers(null);
-    //     setCarparkMarkers(map);  
-    // }    
-} 
+
