@@ -878,6 +878,8 @@ setTimeout()
 setTimeout(function() {
     console.log('Works!');
   }, 500);
+
+
 // // 커피숍 마커를 생성하고 커피숍 마커 배열에 추가하는 함수입니다
 // function createCoffeeMarkers() {
     
@@ -1021,8 +1023,6 @@ function changeMarker(type, beforeType) {
     //         setISTJMarkers(map);
     //     }
     // } else {
-        
-    
     
     var ENFJMenu = document.getElementById('ENFJMenu');
     var ENFPMenu = document.getElementById('ENFPMenu');
@@ -1042,6 +1042,14 @@ function changeMarker(type, beforeType) {
     var ISTPMenu = document.getElementById('ISTPMenu');
 
     if (type === 'enfj') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = 'menu_selected';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1078,6 +1086,14 @@ function changeMarker(type, beforeType) {
         mouseOverPlace('enfj');
     }
     else if (type === 'enfp') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = 'menu_selected';
         ENTJMenu.className = '';
@@ -1110,8 +1126,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ENFP')
     }
     else if (type === 'entj') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = 'menu_selected';
@@ -1144,8 +1169,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ENTJ');
     }
     else if (type === 'entp') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1178,8 +1212,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ENTP');
     }
     else if (type === 'esfj') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1212,8 +1255,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ESFJ')
     }
     else if (type === 'esfp') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1246,8 +1298,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ESFP')
     }
     else if (type === 'estj') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+        mapOption = {
+            center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+            level: 8 // 지도의 확대 레벨
+        };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1280,8 +1341,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ESTJ')
     }
     else if (type === 'estp') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1314,8 +1384,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ESTP')
     }
     else if (type === 'infj') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1348,8 +1427,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('INFJ')
     }
     else if (type === 'infp') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1382,8 +1470,17 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('INFP')
     }
     else if (type === 'intj') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1416,8 +1513,18 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('INTJ')
+
     }
     else if (type === 'intp') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1450,8 +1557,18 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('INTP')
+        
     }
     else if (type === 'isfj') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1484,8 +1601,18 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(null);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ISFJ')
     }
     else if (type === 'isfp') {
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        removeMBTIMarkers(before)
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1518,8 +1645,20 @@ function changeMarker(type, beforeType) {
         setISFPMarkers(map);
         setISTJMarkers(null);
         setISTPMarkers(null);
+        mouseOverPlace('ISFP')
     }
     else if (type === 'istj') {
+        
+        console.log(before)
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+        // removeMBTIMarkers(before)
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1554,11 +1693,22 @@ function changeMarker(type, beforeType) {
         setISTJMarkers(map);
         mouseOverPlace('ISTJ')
         setISTPMarkers(null);
-
+        before = 'ISTJ'
+        // 새 맵을 만들기
+        
         
     }
     else if (type === 'istp') {
         // mouseOverPlace(null)
+        // removeMBTIMarkers(before)
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
         ENFJMenu.className = '';
         ENFPMenu.className = '';
         ENTJMenu.className = '';
@@ -1593,9 +1743,8 @@ function changeMarker(type, beforeType) {
         // setISTPMarkers(map);
         setISTPMarkers(null);
         mouseOverPlace('ISTP')
+        var before = 'ISTP'
+        console.log(before)
     }
 }
-
-
-
 

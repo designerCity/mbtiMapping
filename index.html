@@ -3,88 +3,156 @@
 <head>
     <meta charset="utf-8">
     <title>지도 생성하기</title>
-    
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
-<div id="mapwrap"> 
-    <!-- 지도가 표시될 div -->
-    <div id="map" style="width:100%;height:800px;"></div>
-    <!-- 지도 위에 표시될 마커 카테고리 -->
-    <div class="category">
-        <ul>
-            <li id="ENFJMenu" onclick="changeMarker('enfj')">
-                <span class="ico_comm ico_coffee"></span>
-                ENFJ
+    <!-- <ul class="StylableHorizontalMenu3372578893__menu">
+        <li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="true">
+            <a data-testid="linkElement" href="https://www.yantra.com.sg" target="_self" class="itemDepth02233374943__root itemDepth02233374943--isCurrentPage StylableHorizontalMenu3372578893__menuItem has-custom-focus" tabindex="0"><div class="itemDepth02233374943__container"><span class="itemDepth02233374943__label wixui-horizontal-menu__item-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">집</font></font></span></div></a></li><li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false"><a data-testid="linkElement" href="https://www.yantra.com.sg/about" target="_self" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem has-custom-focus" tabindex="0"><div class="itemDepth02233374943__container"><span class="itemDepth02233374943__label wixui-horizontal-menu__item-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">에 대한</font></font></span></div></a></li><li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false"><a data-testid="linkElement" href="https://www.yantra.com.sg/menu" target="_self" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem has-custom-focus" tabindex="0"><div class="itemDepth02233374943__container"><span class="itemDepth02233374943__label wixui-horizontal-menu__item-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">메뉴</font></font></span></div></a></li><li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false"><a data-testid="linkElement" href="https://www.yantra.com.sg/press" target="_self" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem has-custom-focus" tabindex="0"><div class="itemDepth02233374943__container"><span class="itemDepth02233374943__label wixui-horizontal-menu__item-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">누르다</font></font></span></div></a></li><li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false"><a data-testid="linkElement" href="https://www.yantra.com.sg/reservation" target="_self" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem has-custom-focus" tabindex="0"><div class="itemDepth02233374943__container"><span class="itemDepth02233374943__label wixui-horizontal-menu__item-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">전세</font></font></span></div></a></li><li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false"><a data-testid="linkElement" href="https://www.yantra.com.sg/grandtrunk" target="_self" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem has-custom-focus" tabindex="0"><div class="itemDepth02233374943__container"><span class="itemDepth02233374943__label wixui-horizontal-menu__item-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">그랜드 트렁크</font></font></span></div></a></li><li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false"><a data-testid="linkElement" href="https://www.yantra.com.sg/e-voucher" target="_self" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem has-custom-focus" tabindex="0"><div class="itemDepth02233374943__container"><span class="itemDepth02233374943__label wixui-horizontal-menu__item-label"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">e-바우처</font></font></span></div></a></li><li class="itemDepth02233374943__itemWrapper wixui-horizontal-menu__item" data-testid="menuItemDepth0" data-item-depth="0" data-is-current="false"><a data-testid="linkElement" href="https://www.yantra.com.sg/contact-us" target="_self" class="itemDepth02233374943__root StylableHorizontalMenu3372578893__menuItem has-custom-focus" tabindex="0"><div class="itemDepth02233374943__container">
+            <span class="itemDepth02233374943__label wixui-horizontal-menu__item-label">
+            <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+            문의하기
+            </font>
+            </font>
+        </span>
+        </div>
+        </a>
+        </li>
+    </ul> -->
+    <div className="TextBox">
+        <h2>MBTI 별 선호하는 장소 추천</h2>
+        
+    </div>
+    
+    <div id="mapwrap"> 
+        <!-- 지도가 표시될 div -->
+        <div id="map" style="width:100%;height:500px;"></div>
+        <!-- 지도 위에 표시될 마커 카테고리 -->
+        <div class="category">
+            <ul>
+                <li  id="ENFJMenu" onclick="changeMarker('enfj')" >
+                    <!-- <span class="ico_comm ico_coffee"></span> -->
+                    <div class="pad" style = "border: 0.5px solid #000;">
+                        <h5>ENFJ</h5>
+                        <img src="./img_mbti/ENFJ.png" alt="ENFP" style="height: 45px;">
+                    </div>
+                    
+                </li>
+                <li  id="ENFPMenu" onclick="changeMarker('enfp')">
+                    <!-- <span class="ico_comm ico_store"></span> -->
+                    <div class="pad" style = "border: 0.5px solid #000;">
+                        <h5>ENFP</h5>
+                        <img src="./img_mbti/ENFP.png" alt="ENFP" style="height: 45px;">
+                    </div>
+                </li>
+                
+            <li  id="ENTJMenu" onclick="changeMarker('entj')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ENTJ</h5>
+                    <img src="./img_mbti/ENTJ.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ENFPMenu" onclick="changeMarker('enfp')">
-                <span class="ico_comm ico_store"></span>
-                ENFP
+            <li  id="ENTPMenu" onclick="changeMarker('entp')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ENTP</h5>
+                    <img src="./img_mbti/ENTP.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ENTJMenu" onclick="changeMarker('entj')">
-                <span class="ico_comm ico_coffee"></span>
-                ENTJ
+            <li  id="ESFJMenu" onclick="changeMarker('esfj')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ESFJ</h5> 
+                    <img src="./img_mbti/ESFJ.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ENTPMenu" onclick="changeMarker('entp')">
-                <span class="ico_comm ico_coffee"></span>
-                ENTP
+            <li  id="ESFPMenu" onclick="changeMarker('esfp')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ESFP</h5>
+                    <img src="./img_mbti/ESFP.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ESFJMenu" onclick="changeMarker('esfj')">
-                <span class="ico_comm ico_coffee"></span>
-                ESFJ
+            <li  id="ESTJMenu" onclick="changeMarker('estj')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ESTJ</h5>
+                    <img src="./img_mbti/ESTJ.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ESFPMenu" onclick="changeMarker('esfp')">
-                <span class="ico_comm ico_coffee"></span>
-                ESFP
+            <li  id="ESTPMenu" onclick="changeMarker('estp')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ESTP</h5>
+                    <img src="./img_mbti/ESTP.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ESTJMenu" onclick="changeMarker('estj')">
-                <span class="ico_comm ico_coffee"></span>
-                ESTJ
+            <li  id="INFJMenu" onclick="changeMarker('infj')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>INFJ</h5>
+                    <img src="./img_mbti/INFJ.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ESTPMenu" onclick="changeMarker('estp')">
-                <span class="ico_comm ico_coffee"></span>
-                ESTP
+            <li  id="INFPMenu" onclick="changeMarker('infp')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>INFP</h5>
+                    <img src="./img_mbti/INFP.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="INFJMenu" onclick="changeMarker('infj')">
-                <span class="ico_comm ico_coffee"></span>
-                INFJ
+            <li  id="INTJMenu" onclick="changeMarker('intj')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>INTJ</h5>
+                    <img src="./img_mbti/INTJ.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="INFPMenu" onclick="changeMarker('infp')">
-                <span class="ico_comm ico_coffee"></span>
-                INFP
+            <li  id="INTPMenu" onclick="changeMarker('intp')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>INTP</h5>                    
+                    <img src="./img_mbti/INTP.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="INTJMenu" onclick="changeMarker('intj')">
-                <span class="ico_comm ico_coffee"></span>
-                INTJ
+            <li  id="ISFJMenu" onclick="changeMarker('isfj')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ISFJ</h5>
+                    <img src="./img_mbti/ISFJ.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="INTPMenu" onclick="changeMarker('intp')">
-                <span class="ico_comm ico_coffee"></span>
-                INTP
+            <li  id="ISFPMenu" onclick="changeMarker('isfp')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ISFP</h5>
+                    <img src="./img_mbti/ISFP.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ISFJMenu" onclick="changeMarker('isfj')">
-                <span class="ico_comm ico_coffee"></span>
-                ISFJ
+            <li  id="ISTJMenu" onclick="changeMarker('istj')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ISTJ</h5>
+                    <img src="./img_mbti/ISTJ.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
-            <li id="ISFPMenu" onclick="changeMarker('isfp')">
-                <span class="ico_comm ico_coffee"></span>
-                ISFP
-            </li>
-            <li id="ISTJMenu" onclick="changeMarker('istj')">
-                <span class="ico_comm ico_coffee"></span>
-                ISTJ
-            </li>
-            <li id="ISTPMenu" onclick="changeMarker('istp')">
-                <span class="ico_comm ico_coffee"></span>
-                ISTP
+            <li  id="ISTPMenu" onclick="changeMarker('istp')">
+                <!-- <span class="ico_comm ico_coffee"></span> -->
+                <div class="pad" style = "border: 0.5px solid #000;">
+                    <h5>ISTP</h5>
+                    <img src="./img_mbti/ISTP.png" alt="ENFP" style="height: 45px;">
+                </div>
             </li>
         </ul>
     </div>
 </div>
 
-<p>
+<!-- <p>
     <button onclick="setCenter()">지도 중심좌표 이동시키기</button> 
     <button onclick="panTo()">지도 중심좌표 부드럽게 이동시키기</button> 
-</p>
+</p> -->
 <!--  여기에는 js 앱 키가 들어가야함. -->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=410f81ee9d7e99435c55afb1a68f0792"></script>
 <script>
@@ -100,6 +168,7 @@
 
 
 </script>
+
 <script src="map.js"></script>
 <script src="mappingCatagory.js"></script>
 <script src="index.css"></script>

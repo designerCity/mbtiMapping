@@ -166,10 +166,30 @@ function mouseOverPlace(mbti) {
         // removeENFJMarkers(null)
         return;
     }
-    // var mbtiPositions = mbti + "Positions";
+    // marker 생성
+    createENFJMarkers();
+    createENFPMarkers();
+    createENTJMarkers();
+    createENTPMarkers();
+    createESFJMarkers();
+    createESFPMarkers();
+    createESTJMarkers();
+    createESTPMarkers();
+    createINFJMarkers();
+    createINFPMarkers();
+    createINTJMarkers();
+    createINTPMarkers();
+    createISFJMarkers();
+    createISFPMarkers();
+    createISTJMarkers();
+    createISTPMarkers();
+
     //대문자로 바꾸기
     mbti = mbti.toUpperCase();
-    // mbti = mbti.toLowerCase();
+    // mbtiPositions = mbti + "Positions";
+    // var mbtiMarkers  = []
+    // 각 mbti에 따른 marker 생성
+
     if (mbti == "ISTJ") {
         var mbtiPositions = ISTJPositions;
             contents = ISTJcontents;
@@ -253,8 +273,14 @@ function mouseOverPlace(mbti) {
         var infowindow = new kakao.maps.InfoWindow({
             content: contents[i] // 인포윈도우에 표시할 내용
         });
+        
+        // 마커에 마우스오버 이벤트를 등록합니다
         kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+        // 마커에 마우스아웃 이벤트를 등록합니다
         kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+
+        // 이벤트가 등록된 마커를 배열에 추가합니다
+        // mbtiMarkers.push(marker);
     }
 }
 
@@ -271,8 +297,40 @@ return function() {
     infowindow.close();
 };
 }
-function removeENFJMarkers(mbtiMarkers) {
-	for (var i = 0; i <mbtiMarkers.length; i++) {
-		mbtiMarkers[i].setMap(null);
-	}
+
+function removeMBTIMarkers(mbti) {
+    // 대문자로 바꾸기
+    // mbti 가 null 이 아니면
+    if (mbti) {
+        // mbti 를 string 으로 바꾸고 대문자로 바꾸기
+        
+        mbti = mbti.toUpperCase();
+        mbtiPositions = mbti + "Positions";
+        contents = mbti + "contents";
+        mbtiMarkers = mbti + "Markers";
+    } else {
+        return;
+    }
+
+    // 각 mbti에 따른 marker 삭제
+    if (mbtiPositions == null) {
+        return;
+    } else {
+        // map 객체 생성
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+
+            mapOption = {
+                center: new kakao.maps.LatLng(37.598004414546934, 126.97770621963765), // 지도의 중심좌표
+                level: 8 // 지도의 확대 레벨
+            };
+        // 기존 맵 초기화 및 새 맵 생성
+        map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+        // // 각 mbti에 따른 marker 삭제
+        // for (var i = 0; i < mbtiMarkers.length; i++) {
+        //     mbtiMarkers[i].setMap(null);
+
+        // }
+    }
 }
+
